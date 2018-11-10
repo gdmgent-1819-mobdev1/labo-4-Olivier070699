@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+/***FONTS***/
+@font-face{
+	font-family: 'CRC35';
+	src:url('../fonts/CRC35.otf');
+	src: local('../fonts/CRC35.otf'), url('../fonts/CRC35.otf') format('OpenType');
+}
+
+@font-face{
+	font-family: 'CRC65';
+	src:url('../fonts/CRC65.otf');
+	src: local('../fonts/CRC65.otf'), url('../fonts/CRC65.otf') format('OpenType');
+}
+
+/***ALGEMEEN***/
+
+body{
+	background-color: #f0f0f0;
+	text-align: center;
+}
+
+section{
+	width: 400px;
+	background-color: #ffffff;
+	border: solid 10px #ffffff;
+	border-radius: 5px;
+	margin:2.5% auto 0 auto;
+	-webkit-box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.75);
+}
+
+#div img{
+	width: 100%;
+}
+
+h2, h3{
+	text-transform: capitalize;
+	font-family: 'CRC65';
+}
+
+p, li{
+	text-transform: capitalize;
+	font-family: 'CRC35';
+	list-style-type: none;
+}
+
+li:hover{
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+button{
+	width: 80px;
+	background-color: white;
+	margin: 12.5px 25px 0 25px;
+	cursor: pointer;
+}
+
+button img{
+	width: 100%;
+}
+
+#buttons{
+	margin: 2.5% auto;
+}
+
+#buttons button{
+	width: 100px;
+}
+
+#likes{
+	color: #63bb91;
+	font-weight: bold;
+	margin-bottom: -6px;
+}
+
+#dislikes{
+	color: #ec6e70;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: -6px;
+}
+
+#mapje{
+	width: 800px;
+	height: 400px;
+	position: relative;
+	left: -100%;
+}

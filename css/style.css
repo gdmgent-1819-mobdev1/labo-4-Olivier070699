@@ -38,6 +38,10 @@ section{
 	width: 100%;
 }
 
+#div img:hover{
+	cursor: pointer;
+}
+
 h2, h3{
 	text-transform: capitalize;
 	font-family: 'CRC65';

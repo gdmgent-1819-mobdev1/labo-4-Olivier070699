@@ -82,26 +82,47 @@ function dislike(){
 function seeLikes(){
     document.getElementById('likeList').innerHTML = "";
     for (let i = 0; i < likes.length; i++) {
-        document.getElementById('likeList').innerHTML += "<li class='li_likes'>" + likes[i] + "</li>";
+        document.getElementById('likeList').innerHTML += "<li class='li_likes' id='" + i + "'>" + likes[i] + "</li>";
     }
+    renderEvtListeners();
 };
 
 // seeDislikes
 function seeDislikes(){
     document.getElementById('dislikeList').innerHTML = "";
     for (let i = 0; i < dislikes.length; i++) {
-        document.getElementById('dislikeList').innerHTML += "<li class= 'li_dislikes'>" + dislikes[i] + "</li>";
+        document.getElementById('dislikeList').innerHTML += "<li class='li_dislikes' id='" + i + "'>" + dislikes[i] + "</li>";
     }
+    renderEvtListeners();
 };
 
-// Like to dislike
-let li_likes = document.getElementsByClassName("li_likes");
-for (let i = 0; i < li_likes.length; i++) {
-    li_likes[i].addEventListener("click", toDislike());
+//Like to dislike
+function renderEvtListeners(){
+    let li_likes = document.getElementsByClassName("li_likes");
+    for (let i = 0; i < li_likes.length; i++) {
+        li_likes[i].addEventListener("click", toDislike);
+    }
+
+    let li_dislikes = document.getElementsByClassName("li_dislikes");
+    for (let i = 0; i < li_dislikes.length; i++) {
+        li_dislikes[i].addEventListener("click", toLike);
+    }
 }
 
-function toDislike(){
-    console.log('test');
+function toDislike(e){
+    console.log('LIKEDEBUG: ' + e.currentTarget.id);
+    dislikes.push(likes[e.currentTarget.id]);
+    likes.splice(e.currentTarget.id, 1);
+    seeDislikes();
+    seeLikes();
+}
+
+function toLike(e){
+    console.log('DISLIKEDEBUG: ' + e.currentTarget.id);
+    likes.push(dislikes[e.currentTarget.id]);
+    dislikes.splice(e.currentTarget.id, 1);
+    seeDislikes();
+    seeLikes();
 }
 
 // OWN GEO
@@ -172,26 +193,3 @@ hammer.on('swipeleft', function(ev){
 hammer.on('swiperight', function(ev){
     dislike();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -33,7 +33,7 @@ function nextProfile(){
 function showProfile(gegevens){
 let img = document.createElement('img');
 img.src = gegevens.picture.large;
-document.getElementById('div').innerHTML = '<img src="' + gegevens.picture.large + '" >';
+document.getElementById('div').innerHTML = '<img src="' + gegevens.picture.large + '" draggable="false">';
 
 let showFName = gegevens.name.first;
 let showLName = gegevens.name.last;
@@ -183,7 +183,7 @@ function mapbox(){
 }
 
 //SWIPE
-let container = document.getElementById("div");
+let container = document.getElementById("app");
 let hammer = new Hammer(container);
 
 hammer.on('swipeleft', function(ev){
